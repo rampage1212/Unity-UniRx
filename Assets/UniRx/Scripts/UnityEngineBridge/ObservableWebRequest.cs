@@ -573,9 +573,9 @@ namespace UniRx
             }
 
             var handler = request.downloadHandler;
-            if (handler != null && handler.GetType() != typeof(DownloadHandlerAssetBundle)) // DownloadHandlerAssetBundle will thorw a NotSupportedException if text property is called.
+            if (handler != null && handler.GetType() != typeof(DownloadHandlerAssetBundle)) // DownloadHandlerAssetBundle will throw a NotSupportedException if text property is called.
             {
-                this.Text = request.downloadHandler.text; // cache the text because if www was disposed, can't access it.
+                this.Text = request.downloadHandler.text;
             }
         }
 
