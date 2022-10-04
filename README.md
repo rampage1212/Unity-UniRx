@@ -1,6 +1,6 @@
 UniRx - Reactive Extensions for Unity
 ===
-Created by Yoshifumi Kawai(neuecc)
+Created by Jake Docker(rampage0131)
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/neuecc/UniRx?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -14,7 +14,7 @@ Presentation - http://www.slideshare.net/neuecc/unirx-reactive-extensions-for-un
 
 Support thread on the Unity Forums: Ask me any question - http://forum.unity3d.com/threads/248535-UniRx-Reactive-Extensions-for-Unity
 
-Release Notes, see [UniRx/releases](https://github.com/neuecc/UniRx/releases)
+Release Notes, see [UniRx/releases](https://github.com/rampage0131/UniRx/releases)
 
 UniRx is Core Library (Port of Rx) + Platform Adaptor (MainThreadScheduler/FromCoroutine/etc) + Framework (ObservableTriggers/ReactiveProeperty/PresenterBase/etc) 
 
@@ -38,8 +38,6 @@ UniRx helps UI programming with uGUI. All UI events (clicked, valuechanged, etc)
 
 Introduction
 ---
-Great introduction to Rx article: [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
-
 The following code implements the double click detection example from the article in UniRx:
 
 ```
@@ -718,13 +716,11 @@ enemy.IsDead.Where(isDead => isDead == true)
 
 You can combine ReactiveProperties, ReactiveCollections and observables returned by UnityEvent.AsObservable. All UI elements are observable.
 
-Generic ReactiveProperties are not serializable or inspecatble in the Unity editor, but UniRx provides specialized subclasses of ReactiveProperty that are. These include classes such as Int/LongReactiveProperty, Float/DoubleReactiveProperty, StringReactiveProperty, BoolReactiveProperty and more (Browse them here: [InspectableReactiveProperty.cs](https://github.com/neuecc/UniRx/blob/master/Assets/UniRx/Scripts/UnityEngineBridge/InspectableReactiveProperty.cs)). All are fully editable in the inspector. For custom Enum ReactiveProperty, it's easy to write a custom inspectable ReactiveProperty[T].
-
 The provided derived InpsectableReactiveProperties are displayed in the inspector naturally and notify when their value is changed even when it is changed in the inspector.
 
 ![](StoreDocument/RxPropInspector.png)
 
-This functionality is provided by [InspectorDisplayDrawer](https://github.com/neuecc/UniRx/blob/master/Assets/UniRx/Scripts/UnityEngineBridge/InspectorDisplayDrawer.cs). You can supply your own custom specialized ReactiveProperties by inheriting from it:
+This functionality is provided by [InspectorDisplayDrawer](https://github.com/rampage0131/UniRx/blob/master/Assets/UniRx/Scripts/UnityEngineBridge/InspectorDisplayDrawer.cs). You can supply your own custom specialized ReactiveProperties by inheriting from it:
 
 ```csharp
 public enum Fruit
@@ -919,7 +915,7 @@ Please submit new analyzer ideas on GitHub Issues!
 
 Samples
 ---
-See [UniRx/Examples](https://github.com/neuecc/UniRx/tree/master/Assets/UniRx/Examples)  
+See [UniRx/Examples](https://github.com/rampage0131/UniRx/tree/master/Assets/UniRx/Examples)  
 
 The samples demonstrate how to do resource management (Sample09_EventHandling), what is the MainThreadDispatcher, among other things.
 
@@ -938,8 +934,6 @@ If needs `UniRx.Library` for minimal test, it avilable in NuGet.
 
 Reference
 ---
-* [RxJava Wiki](https://github.com/Netflix/RxJava/wiki)
- 
 This wiki is a great way for learn Rx. All operators are illustrated with graphical marble diagrams, which makes them easy to understand.
 
 * [Reactive Game Architectures](http://sugarpillstudios.com/wp/?page_id=279)
@@ -970,12 +964,6 @@ We welcome any contributions, be they bug reports, requests or pull request.
 Please consult and submit your reports or requests on GitHub issues.  
 Source code is available in `Assets/UniRx/Scripts`.  
 This project is using Visual Studio with [UnityVS](http://unityvs.com/).
-
-Author's other Unity + LINQ Assets
----
-[LINQ to GameObject](https://github.com/neuecc/LINQ-to-GameObject-for-Unity/) is a group of GameObject extensions for Unity that allows traversing the hierarchy and appending GameObject to it like LINQ to XML. It's free and opensource on GitHub.
-
-![](https://raw.githubusercontent.com/neuecc/LINQ-to-GameObject-for-Unity/master/Images/axis.jpg)
 
 Author Info
 ---
